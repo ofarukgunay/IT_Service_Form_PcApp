@@ -65,12 +65,10 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "electron": "electron public/electron.js",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "build --em.main=public/electron.js",
-    "preelectron-pack": "yarn build",
-    "homepage": "./",
-    "dist": "yarn build && electron-builder --publish=never --win --x64"
+    "electron": "electron .",
+    "dist": "yarn build && electron-builder --publish=never --win --x64",
+    "postbuild": "copy public\\electron.js build\\electron.js && copy public\\preload.js build\\preload.js"
   },
   "browserslist": {
     "production": [
