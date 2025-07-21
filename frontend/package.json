@@ -4,7 +4,7 @@
   "description": "Kartepe Belediyesi Bilgi İşlem Servis Bakım Formu - Masaüstü Uygulaması",
   "author": "Kartepe Belediyesi Bilgi İşlem Departmanı",
   "license": "MIT",
-  "main": "public/electron.js",
+  "main": "electron.js",
   "homepage": "./",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -68,8 +68,7 @@
     "test": "craco test",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron": "electron .",
-    "dist": "yarn build && electron-builder --publish=never --win --x64",
-    "postbuild": "copy public\\electron.js build\\electron.js && copy public\\preload.js build\\preload.js"
+    "dist": "yarn build && electron-builder --publish=never --win --x64"
   },
   "browserslist": {
     "production": [
@@ -111,7 +110,8 @@
       "build/**/*",
       "preload.js",
       "electron.js",
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "assets/**/*"
     ],
     "mac": {
       "category": "public.app-category.business",
