@@ -68,7 +68,7 @@
     "test": "craco test",
     "electron": "electron .",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "build --em.main=public/electron.js",
+    "electron-pack": "build --em.main=electron.js",
     "preelectron-pack": "yarn build",
     "homepage": "./",
     "dist": "yarn build && electron-builder --publish=never --win --x64"
