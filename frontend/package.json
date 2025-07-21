@@ -110,8 +110,9 @@
     },
     "files": [
       "build/**/*",
-      "public/electron.js",
-      "public/preload.js",
+      "public/**/*",
+      "preload.js",
+      "electron.js",
       "node_modules/**/*"
     ],
     "mac": {
