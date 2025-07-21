@@ -57,6 +57,7 @@
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "electron-is-dev": "^3.0.1",
     "vaul": "^1.1.2",
     "zod": "^3.24.4"
   },
@@ -65,9 +66,10 @@
     "build": "craco build",
     "test": "craco test",
     "electron": "electron public/electron.js",
-    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron public/electron.js\"",
-    "electron-pack": "electron-builder",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=public/electron.js",
     "preelectron-pack": "yarn build",
+    "homepage": "./",
     "dist": "yarn build && electron-builder --publish=never --win --x64"
   },
   "browserslist": {
@@ -90,7 +92,6 @@
     "concurrently": "^9.2.0",
     "electron": "^37.2.3",
     "electron-builder": "^26.0.12",
-    "electron-is-dev": "^3.0.1",
     "electron-updater": "^6.6.2",
     "eslint": "9.23.0",
     "eslint-plugin-import": "2.31.0",
@@ -102,14 +103,14 @@
     "wait-on": "^8.0.3"
   },
   "build": {
-    "appId": "com.kartepe.servis-bakim",
+    "appId": "com.kartepe.electron-cra",
     "productName": "Servis Bakım Formu",
     "directories": {
       "output": "dist"
     },
     "files": [
       "build/**/*",
-      "electron.js",
+      "public/electron.js",
       "public/preload.js",
       "node_modules/**/*"
     ],
