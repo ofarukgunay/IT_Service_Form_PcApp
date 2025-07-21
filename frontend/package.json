@@ -4,7 +4,7 @@
   "description": "Kartepe Belediyesi Bilgi İşlem Servis Bakım Formu - Masaüstü Uygulaması",
   "author": "Kartepe Belediyesi Bilgi İşlem Departmanı",
   "license": "MIT",
-  "main": "electron.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -41,14 +41,12 @@
     "cmdk": "^1.1.1",
     "cra-template": "1.2.0",
     "date-fns": "^4.1.0",
-    "electron-is-dev": "^3.0.1",
     "embla-carousel-react": "^8.6.0",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
     "jspdf": "^3.0.1",
     "lucide-react": "^0.507.0",
     "next-themes": "^0.4.6",
-    "path-browserify": "^1.0.1",
     "react": "^19.0.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
@@ -59,6 +57,7 @@
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "electron-is-dev": "^3.0.1",
     "vaul": "^1.1.2",
     "zod": "^3.24.4"
   },
@@ -66,7 +65,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "electron": "electron .",
+    "electron": "electron public/electron.js",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "build --em.main=public/electron.js",
     "preelectron-pack": "yarn build",
@@ -111,8 +110,9 @@
     },
     "files": [
       "build/**/*",
-      "public/preload.js",
-      "package.json"
+      "preload.js",
+      "electron.js",
+      "node_modules/**/*"
     ],
     "mac": {
       "category": "public.app-category.business",

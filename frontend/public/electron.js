@@ -9,9 +9,7 @@ function createWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      preload: isDev
-        ? path.join(__dirname, "preload.js")
-        : path.join(__dirname, "..", "build", "preload.js"), // Preload dosyasını burada tanımla
+      preload: path.join(__dirname, "build", "preload.js"), // Preload dosyasını burada tanımla
       nodeIntegration: false,
       contextIsolation: true,
       webSecurity: true,
@@ -23,7 +21,7 @@ function createWindow() {
 
   const startUrl = isDev
     ? "http://localhost:3000"
-    : `file://${path.join(__dirname, "..", "build", "index.html")}`; // build klasörü production'da asar kökünde
+    : `file://${path.join(__dirname, "index.html")}`; // build klasörü production'da asar kökünde
 
   mainWindow.loadURL(startUrl);
 
