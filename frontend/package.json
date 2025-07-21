@@ -110,7 +110,6 @@
     },
     "files": [
       "build/**/*",
-      "public/**/*",
       "preload.js",
       "electron.js",
       "node_modules/**/*"
